@@ -4,439 +4,282 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Future Tech Summit 2026</title>
+    <title>Student Event Registration - Version 2.0</title>
 
     <style>
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: Arial, sans-serif;
         }
 
         body {
-            min-height: 100vh;
-            background: #f4f1ea;
-            color: #1e1e1e;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 30px;
+            background: #f4f7fb;
+            color: #1f2937;
         }
 
-        .container {
-            width: 100%;
-            max-width: 1050px;
-            background: white;
-            display: grid;
-            grid-template-columns: 42% 58%;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-            border-radius: 18px;
-            overflow: hidden;
-        }
-
-        /* LEFT SECTION */
-
-        .left {
-            background: #18202b;
+        header {
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
             color: white;
-            padding: 50px 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            padding: 45px 20px;
+            text-align: center;
         }
 
-        .tag {
-            font-size: 13px;
-            letter-spacing: 3px;
-            color: #f4b942;
+        header h1 {
+            font-size: 38px;
+            margin-bottom: 12px;
+        }
+
+        header p {
+            font-size: 17px;
+            opacity: 0.95;
+        }
+
+        .version {
+            display: inline-block;
+            margin-top: 18px;
+            padding: 8px 18px;
+            background: white;
+            color: #5b21b6;
+            border-radius: 20px;
             font-weight: bold;
         }
 
-        .left h1 {
-            font-size: 46px;
-            line-height: 1.05;
-            margin-top: 30px;
+        .container {
+            max-width: 1000px;
+            margin: 35px auto;
+            padding: 0 20px;
         }
 
-        .left h1 span {
-            color: #f4b942;
+        .intro {
+            background: white;
+            padding: 28px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
         }
 
-        .left p {
-            margin-top: 22px;
+        .intro h2 {
+            color: #4f46e5;
+            margin-bottom: 12px;
+        }
+
+        .intro p {
             line-height: 1.7;
-            color: #d7dbe0;
         }
 
         .event-info {
-            margin-top: 35px;
-            border-top: 1px solid #3d4652;
-            padding-top: 22px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+            margin-bottom: 25px;
         }
 
-        .event-info div {
-            margin-bottom: 12px;
-            font-size: 14px;
+        .card {
+            background: white;
+            padding: 22px;
+            border-radius: 14px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.07);
         }
 
-        .event-info strong {
-            color: #f4b942;
+        .card h3 {
+            color: #7c3aed;
+            margin-bottom: 10px;
         }
 
-        /* RIGHT SECTION */
-
-        .right {
-            padding: 45px;
+        .card p {
+            line-height: 1.5;
         }
 
-        .right h2 {
-            font-size: 30px;
-            margin-bottom: 8px;
+        .registration {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
         }
 
-        .subtitle {
-            color: #777;
-            margin-bottom: 30px;
-        }
-
-        .form-group {
-            margin-bottom: 18px;
+        .registration h2 {
+            color: #4f46e5;
+            margin-bottom: 20px;
         }
 
         label {
             display: block;
-            font-size: 13px;
+            margin-top: 15px;
+            margin-bottom: 6px;
             font-weight: bold;
-            margin-bottom: 7px;
         }
 
         input,
         select {
             width: 100%;
-            padding: 13px;
-            border: 1px solid #d5d5d5;
+            padding: 12px;
+            border: 1px solid #d1d5db;
             border-radius: 8px;
-            font-size: 14px;
-            outline: none;
-            background: white;
-        }
-
-        input:focus,
-        select:focus {
-            border-color: #f4b942;
-            box-shadow: 0 0 0 2px rgba(244, 185, 66, 0.12);
-        }
-
-        .row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
+            font-size: 15px;
         }
 
         button {
+            margin-top: 22px;
             width: 100%;
-            padding: 15px;
-            margin-top: 10px;
+            padding: 13px;
             border: none;
             border-radius: 8px;
-            background: #f4b942;
-            color: #18202b;
-            font-size: 15px;
+            background: #4f46e5;
+            color: white;
+            font-size: 16px;
             font-weight: bold;
             cursor: pointer;
-            transition: 0.2s;
         }
 
         button:hover {
-            background: #e0a72f;
-            transform: translateY(-1px);
+            background: #3730a3;
         }
 
-        .version {
+        .update-box {
+            margin-top: 25px;
+            padding: 18px;
+            background: #eef2ff;
+            border-left: 5px solid #4f46e5;
+            border-radius: 8px;
+        }
+
+        footer {
+            margin-top: 40px;
+            background: #111827;
+            color: white;
             text-align: center;
-            margin-top: 18px;
-            font-size: 12px;
-            color: #999;
-        }
-
-        /* RESPONSIVE */
-
-        @media (max-width: 800px) {
-
-            body {
-                padding: 15px;
-            }
-
-            .container {
-                grid-template-columns: 1fr;
-            }
-
-            .left {
-                padding: 35px 30px;
-            }
-
-            .left h1 {
-                font-size: 38px;
-            }
-
-            .right {
-                padding: 30px;
-            }
-
-            .row {
-                grid-template-columns: 1fr;
-                gap: 0;
-            }
+            padding: 22px;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="container">
+<header>
+    <h1>Student TechConnect 2026</h1>
+    <p>Technical Workshop & Innovation Registration Portal</p>
+    <div class="version">APPLICATION VERSION 2.0</div>
+</header>
+
+<div class="container">
+
+    <section class="intro">
+        <h2>Welcome to TechConnect 2026</h2>
+        <p>
+            TechConnect 2026 is a student-focused technical event designed
+            to encourage innovation, practical learning and collaboration.
+            Participants can explore emerging technologies through workshops,
+            technical sessions and interactive activities.
+        </p>
+    </section>
+
+    <section class="event-info">
+
+        <div class="card">
+            <h3>Event Date</h3>
+            <p>25 October 2026</p>
+        </div>
+
+        <div class="card">
+            <h3>Venue</h3>
+            <p>Innovation & Technology Centre</p>
+        </div>
+
+        <div class="card">
+            <h3>Focus Areas</h3>
+            <p>AI, Cloud Computing, Cybersecurity & Software Engineering</p>
+        </div>
+
+    </section>
+
+    <section class="registration">
+
+        <h2>Student Registration</h2>
+
+        <form onsubmit="registerStudent(event)">
+
+            <label for="name">Student Name</label>
+            <input
+                type="text"
+                id="name"
+                value="Poojitha"
+                required
+            >
+
+            <label for="regno">Register Number</label>
+            <input
+                type="text"
+                id="regno"
+                value="24MIS0184"
+                required
+            >
+
+            <label for="program">Programme</label>
+            <input
+                type="text"
+                id="program"
+                value="M.Tech Software Engineering"
+                required
+            >
+
+            <label for="email">Email</label>
+            <input
+                type="email"
+                id="email"
+                value="poojitha@example.com"
+                required
+            >
+
+            <label for="date">Preferred Event Date</label>
+            <input
+                type="date"
+                id="date"
+                value="2026-10-25"
+                required
+            >
+
+            <label for="track">Technical Track</label>
+            <select id="track" required>
+                <option value="">Select a track</option>
+                <option>Artificial Intelligence</option>
+                <option>Cloud Computing</option>
+                <option>Cybersecurity</option>
+                <option>Software Engineering</option>
+            </select>
+
+            <button type="submit">Complete Registration</button>
+
+        </form>
+
+        <div class="update-box">
+            <strong>Version 2.0 Update:</strong>
+            The registration portal has been enhanced with a new
+            technical-track selection and an improved registration interface.
+        </div>
 
-        <!-- LEFT SIDE -->
+    </section>
 
-        <section class="left">
+</div>
 
-            <div>
+<footer>
+    Student TechConnect 2026 | Poojitha | 24MIS0184
+</footer>
 
-                <div class="tag">
-                    CAMPUS CONNECT 2026
-                </div>
+<script>
+    function registerStudent(event) {
+        event.preventDefault();
 
-                <h1>
-                    Future<br>
-                    Tech <span>Summit</span>
-                </h1>
+        const name = document.getElementById("name").value;
 
-                <p>
-                    A student-focused technology event bringing together
-                    emerging ideas, practical innovation and the technologies
-                    shaping tomorrow's digital world.
-                </p>
-
-                <div class="event-info">
-
-                    <div>
-                        <strong>DATE</strong>
-                        &nbsp; 07 November 2026
-                    </div>
-
-                    <div>
-                        <strong>VENUE</strong>
-                        &nbsp; Innovation Convention Hall
-                    </div>
-
-                    <div>
-                        <strong>TIME</strong>
-                        &nbsp; 09:30 AM – 04:30 PM
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div>
-
-                <p>
-                    AI • CLOUD • CYBERSECURITY • SOFTWARE ENGINEERING
-                </p>
-
-            </div>
-
-        </section>
-
-
-        <!-- RIGHT SIDE -->
-
-        <section class="right">
-
-            <h2>
-                Join the Summit
-            </h2>
-
-            <p class="subtitle">
-                Complete the registration form to reserve your seat.
-            </p>
-
-
-            <form onsubmit="registerStudent(event)">
-
-                <!-- Student Name -->
-
-                <div class="form-group">
-
-                    <label for="studentName">
-                        Student Name
-                    </label>
-
-                    <input
-                        type="text"
-                        id="studentName"
-                        name="studentName"
-                        value="Poojitha"
-                        required
-                    >
-
-                </div>
-
-
-                <!-- Register Number + Department -->
-
-                <div class="row">
-
-                    <div class="form-group">
-
-                        <label for="registerNumber">
-                            Register Number
-                        </label>
-
-                        <input
-                            type="text"
-                            id="registerNumber"
-                            name="registerNumber"
-                            value="24MIS0184"
-                            required
-                        >
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="department">
-                            Department
-                        </label>
-
-                        <input
-                            type="text"
-                            id="department"
-                            name="department"
-                            value="M.Tech Software Engineering"
-                            required
-                        >
-
-                    </div>
-
-                </div>
-
-
-                <!-- Email -->
-
-                <div class="form-group">
-
-                    <label for="email">
-                        Email Address
-                    </label>
-
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value="poojitha@example.com"
-                        required
-                    >
-
-                </div>
-
-
-                <!-- Event Date + Session -->
-
-                <div class="row">
-
-                    <div class="form-group">
-
-                        <label for="eventDate">
-                            Event Date
-                        </label>
-
-                        <input
-                            type="date"
-                            id="eventDate"
-                            name="eventDate"
-                            value="2026-11-07"
-                            required
-                        >
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="session">
-                            Session
-                        </label>
-
-                        <select
-                            id="session"
-                            name="session"
-                            required
-                        >
-
-                            <option value="">
-                                Select Session
-                            </option>
-
-                            <option value="morning">
-                                Morning Session
-                            </option>
-
-                            <option value="afternoon">
-                                Afternoon Session
-                            </option>
-
-                            <option value="full-day">
-                                Full Day
-                            </option>
-
-                        </select>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Registration Button -->
-
-                <button type="submit">
-                    CONFIRM EVENT REGISTRATION
-                </button>
-
-            </form>
-
-
-            <div class="version">
-                Application Version 2.0 • Kubernetes Deployment
-            </div>
-
-        </section>
-
-    </div>
-
-
-    <script>
-
-        function registerStudent(event) {
-
-            event.preventDefault();
-
-            const name =
-                document.getElementById("studentName").value;
-
-            const regNo =
-                document.getElementById("registerNumber").value;
-
-            alert(
-                "Registration confirmed successfully!\n\n" +
-                "Student: " + name +
-                "\nRegister Number: " + regNo +
-                "\nEvent: Future Tech Summit 2026"
-            );
-        }
-
-    </script>
+        alert(
+            "Registration submitted successfully for " +
+            name +
+            "! Application Version 2.0"
+        );
+    }
+</script>
 
 </body>
 </html>
