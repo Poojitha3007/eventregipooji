@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: student-event-registration-poojitha
-          image: kurellapoojitha/event-registrationpooji:latest
+          image: kurellapoojitha/event-registrationpooji:v2
 
           ports:
             - containerPort: 80
@@ -26,7 +26,6 @@ spec:
 ---
 apiVersion: v1
 kind: Service
-
 metadata:
   name: student-event-service-poojitha
 
